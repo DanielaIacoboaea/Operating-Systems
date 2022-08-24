@@ -1,0 +1,5 @@
+pwd
+ls
+wc wish.c > count.txt
+ls
+exit
