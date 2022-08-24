@@ -14,8 +14,9 @@
     > - Semaphores
     > - Common concurrency problems 
     > - To compile and run this programs:
-        >>    make
-        >>    ./foo
+
+            make
+            ./foo
     
     - Implement in **[pzip](/Concurrency/pzip)** the simple compression tool based on run-length encoding, **zip**, using *threads* this time to make a parallel version of zip:
     > - Use `get_nprocs()` to create a number of threads to match the number of CPU resources available
@@ -25,8 +26,9 @@
     > - Each thread saves the compression inside the `struct pzip_letters` that gets returned to the main thread
     > - The main thread concatenates inside an array all the values returned from threads and prints the final result 
      > - To compile and run this programs:
-        >>    gcc -o pzip pzip .c -Wall -Werror -pthread -O
-        >>    ./pzip file > file.z
+
+            gcc -o pzip pzip .c -Wall -Werror -pthread -O
+            ./pzip file > file.z
     
     - Learn about the general nature of the *MapReduce* paradigm an implement a **[MapReduce](/Concurrency/MapReduce)** library using threads and related functions:
     > - The purpose of the library is to support the execution of user-defined `Map()` and `Reduce()` functions so that users don't have to worry about how to parallelize their application
@@ -37,9 +39,10 @@
     > - Inside the **mapreduce.c** we have defined an array as a global data structure that holds all the **partitions** that will be created and will store all the keys and values received through the mapper.
     > - Once the computation is done, the Reducer threads start running the return the result for each key (in this case the number of times a word appears in a text)
        > - To compile and run this programs:
-        >>    gcc mapreduce.c -o mapreduce -Wall -pthread
-        >>    gcc user_program.c mapreduce.c -o user_program -Wall -pthread
-        >>    ./user_program file.txt
+
+            gcc mapreduce.c -o mapreduce -Wall -pthread
+            gcc user_program.c mapreduce.c -o user_program -Wall -pthread
+            ./user_program file.txt
     
 
 2. ***xv6 Kernel Projects***
@@ -66,8 +69,9 @@
         > - First compute the total number of tickets available and then generate a random number 
         > - When the sheduler loops through the processes table it has an extra condition to check: any process that has a number of tickets => than the winning ticket is chosen to be sheduled next
          > - To compile and run this program, after [installing xv6](https://github.com/remzi-arpacidusseau/ostep-projects/blob/master/INSTALL-xv6.md):
-        >>    make qemu-nox
-        >>    ./userprogram.c
+
+            make qemu-nox
+            ./userprogram.c
     
     - **[xv6 Kernel Threads](/Concurrency/xv6-Threads)**
     > - define `clone()` and `join()` system calls and `thread_create()` call, `lock_acquire()` and `lock_release()` functions to support thread creation from user programs 
@@ -75,6 +79,7 @@
     > - and is uses the stack passed in as argument, starts running the function passed in and the function has the arguments available as well
     > `join()` system call is very similar with `wait()`, the difference being that `join()` waits for a child thread that shares the address space with the calling process to exit.
     > - To compile and run this program, after [installing xv6](https://github.com/remzi-arpacidusseau/ostep-projects/blob/master/INSTALL-xv6.md):
-        >>    make qemu-nox
-        >>    ./userprogram.c
+
+            make qemu-nox
+            ./userprogram.c
 

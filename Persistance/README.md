@@ -15,5 +15,6 @@
     > - Understand how a file system checker or journaling can recover from **crashes** and help keep the on-disk image in a reliable state
     > - The inside **[File Systems](/Persistance/File-Systems)** use `stat()` system call to access data about files like: **type of file**, **reference count**, **inode**, **owner**, **size**, number of **blocks** allocated on the disk, time of last **access/modification** 
     > - To compile and run this programs:
-        >>    gcc -o stat stat.c -Wall -Werror
-        >>    ./stat file
+
+            gcc -o stat stat.c -Wall -Werror
+            ./stat file
