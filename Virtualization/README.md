@@ -6,29 +6,30 @@
 
 1. ***C/Linux Projects*** 
     
-    - Build simple versions of commonly used commands like cat and grep called **[wcat](/cat)** and **[wgrep](/grep)**
-        > - Use `fopen()`, `fgets()`, and `fclose()` to open the files received as command-line arguments and print out their contents 
-        > -  Search through a file a user-specified search term in the line. If the line contains the word, print that line 
-        > - To compile and run this programs:
+    - Build simple versions of commonly used commands like cat and grep called **[wcat](/Virtualization/cat)** and **[wgrep](/Virtualization/grep)**
+    > - Use `fopen()`, `fgets()`, and `fclose()` to open the files received as command-line arguments and print out their contents 
+    > -  Search through a file a user-specified search term in the line. If the line contains the word, print that line 
+    > - To compile and run this programs:
         >>     gcc -o wcat wcat.c -Wall -Werror
         >>     ./wcat file.txt
         >>     gcc -o wgrep wgrep.c -Wall -Werror
         >>     ./wgrep foo bar.txt
-        > - To run the tests for this programs:
+    > - To run the tests for this programs:
         >>     ./test-wcat.sh
         >>     ./test-wgrep.sh
         
-    - Build a file compression tool (**[wzip](/zip_project)**) and a file decompression tool(**[wunzip](/zip_project)**)
-        > - The type of compression: run-length encoding (RLE). Count the number of the same consecutive characters and turn that into the number and a single instance of the character (e.g aaaaaaaaaabbbb turns into 10a4b).
-        > - Use file decompression to read through the file and reverse the process 
-        > - To compile and run this programs:
+    - Build a file compression tool (**[wzip](/Virtualization/zip_project)**) and a file decompression tool(**[wunzip](/Virtualization/zip_project)**)
+    > - The type of compression: run-length encoding (RLE). Count the number of the same consecutive characters and turn that into the number and a single instance of the character (e.g aaaaaaaaaabbbb turns into 10a4b).
+    > - Use file decompression to read through the file and reverse the process 
+    > - To compile and run this programs:
         >>     gcc -o wzip wzip.c -Wall -Werror
         >>     ./wzip file.txt > file.z
         >>     gcc -o wunzip wunzip.c -Wall -Werror
         >>     ./wunzip file.z
-        > - To run the tests for this programs:
+    > - To run the tests for this programs:
         >>     ./test-wzip.sh
         >>     ./test-wunzip.sh
+
     - Understand process creation using [`fork()`](/fork) system call
     > - Gain familiarity with the `fork()` system call which the OS provides as a way to create a new process
     > - Use `wait()` system call to make the output deterministic, delay the parent's execution until the child process is done and `wait()` returns to parent 
@@ -40,22 +41,22 @@
         >>     gcc -o fork fork.c -Wall -Werror
         >>     ./fork
     
-    - Build a user program called **[wish](/wish-shell)**  using `fork()`, `wait()` and `exec()` similiar to a shell that prompts 
+    - Build a user program called **[wish](/Virtualization/wish-shell)**  using `fork()`, `wait()` and `exec()` similiar to a shell that prompts 
     the user for a command, 
-        > - calls `fork()` to create a new child process to run the command
-        > - calls `execvp()` to run the executable program typed in the command and waits for the command to complete. 
-        > - when the child process returns, the shell prompts the user for the next command. 
-        > - **wish** has `exit`, `cd`, and `path` as built-in commands
-        > - **wish** provides redirection of the standard output if the user provides a filename after the `>` character
-        > - the user can change the default paths `path /bin /usr/bin`, if the path is set to empty, only the built-in commands are available
-        > - To compile and run this programs:
+    > - calls `fork()` to create a new child process to run the command
+    > - calls `execvp()` to run the executable program typed in the command and waits for the command to complete. 
+    > - when the child process returns, the shell prompts the user for the next command. 
+    > - **wish** has `exit`, `cd`, and `path` as built-in commands
+    > - **wish** provides redirection of the standard output if the user provides a filename after the `>` character
+    > - the user can change the default paths `path /bin /usr/bin`, if the path is set to empty, only the built-in commands are available
+    > - To compile and run this programs:
         >>     gcc -o wish wish.c -Wall -Werror
         >>     ./wish
         >>     ./wish batch.txt
 
 2. ***xv6 Kernel Projects***
 
-    - Add a **[system call](/xv6-System-call)** to xv6 called `getreadcount()`
+    - Add a **[system call](/Virtualization/xv6-System-call)** to xv6 called `getreadcount()`
     - *A bit of background first:* 
     > - The hardware provides different modes of execution: **user mode** and **kernel mode**
     > - The concept of *Limited Direct Execution* allows a user program to run directly on the CPU and thus be fast
