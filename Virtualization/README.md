@@ -11,15 +11,15 @@
     > -  Search through a file a user-specified search term in the line. If the line contains the word, print that line 
     > - To compile and run this programs:
 
-        >>    gcc -o wcat wcat.c -Wall -Werror
-        >>    ./wcat file.txt
-        >>    gcc -o wgrep wgrep.c -Wall -Werror
-        >>    ./wgrep foo bar.txt
+    >>    gcc -o wcat wcat.c -Wall -Werror
+    >>    ./wcat file.txt
+    >>    gcc -o wgrep wgrep.c -Wall -Werror
+    >>    ./wgrep foo bar.txt
 
     > - To run the tests for this programs:
-    
-        >>    ./test-wcat.sh
-        >>    ./test-wgrep.sh
+
+    >>    ./test-wcat.sh
+    >>    ./test-wgrep.sh
         
     - Build a file compression tool (**[wzip](/Virtualization/zip_project)**) and a file decompression tool(**[wunzip](/Virtualization/zip_project)**)
     > - The type of compression: run-length encoding (RLE). Count the number of the same consecutive characters and turn that into the number and a single instance of the character (e.g aaaaaaaaaabbbb turns into 10a4b).
