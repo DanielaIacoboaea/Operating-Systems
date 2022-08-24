@@ -7,17 +7,17 @@
 
 1. ***C/Linux Projects*** 
     
-    - **[Threads](/Threads)** has some pre-written code that needed to be understood and complete each program to achieve various tasks:
+    - **[Threads](/Concurrency/Threads)** has some pre-written code that needed to be understood and complete each program to achieve various tasks:
     > - The purpose of completing the projects was to understand how a **multi-threaded** is created and how it works, what does a **critical section** mean, **race conditions** and how a non deterministic output can result from **multi-threaded** programs 
     > - How to provide **mutual exclusion** to a critical section using **locks**
     > - How to use **condition variables** to signal between threads
     > - Semaphores
     > - Common concurrency problems 
     > - To compile and run this programs:
-        >>     make
-        >>     ./foo
+        >>    make
+        >>    ./foo
     
-    - Implement in **[pzip](/pzip)** the simple compression tool based on run-length encoding, **zip**, using *threads* this time to make a parallel version of zip:
+    - Implement in **[pzip](/Concurrency/pzip)** the simple compression tool based on run-length encoding, **zip**, using *threads* this time to make a parallel version of zip:
     > - Use `get_nprocs()` to create a number of threads to match the number of CPU resources available
     > - Split the file between threads based on the size of the file and the number of threads available
     > - Use `mmap()` to get pointer to the start of the file 
@@ -25,10 +25,10 @@
     > - Each thread saves the compression inside the `struct pzip_letters` that gets returned to the main thread
     > - The main thread concatenates inside an array all the values returned from threads and prints the final result 
      > - To compile and run this programs:
-        >>     gcc -o pzip pzip .c -Wall -Werror -pthread -O
-        >>     ./pzip file > file.z
+        >>    gcc -o pzip pzip .c -Wall -Werror -pthread -O
+        >>    ./pzip file > file.z
     
-    - Learn about the general nature of the *MapReduce* paradigm an implement a **[MapReduce](/MapReduce)** library using threads and related functions:
+    - Learn about the general nature of the *MapReduce* paradigm an implement a **[MapReduce](/Concurrency/MapReduce)** library using threads and related functions:
     > - The purpose of the library is to support the execution of user-defined `Map()` and `Reduce()` functions so that users don't have to worry about how to parallelize their application
     > - The user program that we'll work with is **wordCount_user.c** 
     > - The **MapReduce** library needs to handle thread creation and allow many mappers and reducers to run at the same time 
@@ -37,14 +37,14 @@
     > - Inside the **mapreduce.c** we have defined an array as a global data structure that holds all the **partitions** that will be created and will store all the keys and values received through the mapper.
     > - Once the computation is done, the Reducer threads start running the return the result for each key (in this case the number of times a word appears in a text)
        > - To compile and run this programs:
-        >>     gcc mapreduce.c -o mapreduce -Wall -pthread
-        >>     gcc user_program.c mapreduce.c -o user_program -Wall -pthread
-        >>     ./user_program file.txt
+        >>    gcc mapreduce.c -o mapreduce -Wall -pthread
+        >>    gcc user_program.c mapreduce.c -o user_program -Wall -pthread
+        >>    ./user_program file.txt
     
 
 2. ***xv6 Kernel Projects***
 
-    - **[xv6 Lottery Scheduler](/xv6-Lottery-Scheduler)**
+    - **[xv6 Lottery Scheduler](/Concurrency/xv6-Lottery-Scheduler)**
     - *A bit of background first:* 
     > - *A sheduling policy* is an algorithm through which, given a number of *RUNNABLE* processes, the OS decides which process should run next 
     > - There are different types of sheduling policies: running process until completion (**FIFO**, **SJF**), run jobs for a time slices, then switch to another job(**Round-Robin**, **MLFQ**)
@@ -66,15 +66,15 @@
         > - First compute the total number of tickets available and then generate a random number 
         > - When the sheduler loops through the processes table it has an extra condition to check: any process that has a number of tickets => than the winning ticket is chosen to be sheduled next
          > - To compile and run this program, after [installing xv6](https://github.com/remzi-arpacidusseau/ostep-projects/blob/master/INSTALL-xv6.md):
-        >>     make qemu-nox
-        >>     ./userprogram.c
+        >>    make qemu-nox
+        >>    ./userprogram.c
     
-    - **[xv6 Kernel Threads](/xv6-Threads)**
+    - **[xv6 Kernel Threads](/Concurrency/xv6-Threads)**
     > - define `clone()` and `join()` system calls and `thread_create()` call, `lock_acquire()` and `lock_release()` functions to support thread creation from user programs 
     > - To define `clone()` we start from `fork()`, much of the information being the same, except that child process shares the same address space as parent process (will share the same **pgdir**)
     > - and is uses the stack passed in as argument, starts running the function passed in and the function has the arguments available as well
     > `join()` system call is very similar with `wait()`, the difference being that `join()` waits for a child thread that shares the address space with the calling process to exit.
     > - To compile and run this program, after [installing xv6](https://github.com/remzi-arpacidusseau/ostep-projects/blob/master/INSTALL-xv6.md):
-        >>     make qemu-nox
-        >>     ./userprogram.c
+        >>    make qemu-nox
+        >>    ./userprogram.c
 

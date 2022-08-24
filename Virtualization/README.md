@@ -10,25 +10,25 @@
     > - Use `fopen()`, `fgets()`, and `fclose()` to open the files received as command-line arguments and print out their contents 
     > -  Search through a file a user-specified search term in the line. If the line contains the word, print that line 
     > - To compile and run this programs:
-        >>     gcc -o wcat wcat.c -Wall -Werror
-        >>     ./wcat file.txt
-        >>     gcc -o wgrep wgrep.c -Wall -Werror
-        >>     ./wgrep foo bar.txt
+        >>    gcc -o wcat wcat.c -Wall -Werror
+        >>    ./wcat file.txt
+        >>    gcc -o wgrep wgrep.c -Wall -Werror
+        >>    ./wgrep foo bar.txt
     > - To run the tests for this programs:
-        >>     ./test-wcat.sh
-        >>     ./test-wgrep.sh
+        >>    ./test-wcat.sh
+        >>    ./test-wgrep.sh
         
     - Build a file compression tool (**[wzip](/Virtualization/zip_project)**) and a file decompression tool(**[wunzip](/Virtualization/zip_project)**)
     > - The type of compression: run-length encoding (RLE). Count the number of the same consecutive characters and turn that into the number and a single instance of the character (e.g aaaaaaaaaabbbb turns into 10a4b).
     > - Use file decompression to read through the file and reverse the process 
     > - To compile and run this programs:
-        >>     gcc -o wzip wzip.c -Wall -Werror
-        >>     ./wzip file.txt > file.z
-        >>     gcc -o wunzip wunzip.c -Wall -Werror
-        >>     ./wunzip file.z
+        >>    gcc -o wzip wzip.c -Wall -Werror
+        >>    ./wzip file.txt > file.z
+        >>    gcc -o wunzip wunzip.c -Wall -Werror
+        >>    ./wunzip file.z
     > - To run the tests for this programs:
-        >>     ./test-wzip.sh
-        >>     ./test-wunzip.sh
+        >>    ./test-wzip.sh
+        >>    ./test-wunzip.sh
 
     - Understand process creation using [`fork()`](/fork) system call
     > - Gain familiarity with the `fork()` system call which the OS provides as a way to create a new process
@@ -38,8 +38,8 @@
     > - How does `exec()` manage to do this? 
          >> - When it loads code from the new executable provided (e.g `ls`) and overwrittes it's current code segment, the memory space of the program is re-initialized (stack, heap, static data)
     > - To compile and run this programs:
-        >>     gcc -o fork fork.c -Wall -Werror
-        >>     ./fork
+        >>    gcc -o fork fork.c -Wall -Werror
+        >>    ./fork
     
     - Build a user program called **[wish](/Virtualization/wish-shell)**  using `fork()`, `wait()` and `exec()` similiar to a shell that prompts 
     the user for a command, 
@@ -50,9 +50,9 @@
     > - **wish** provides redirection of the standard output if the user provides a filename after the `>` character
     > - the user can change the default paths `path /bin /usr/bin`, if the path is set to empty, only the built-in commands are available
     > - To compile and run this programs:
-        >>     gcc -o wish wish.c -Wall -Werror
-        >>     ./wish
-        >>     ./wish batch.txt
+        >>    gcc -o wish wish.c -Wall -Werror
+        >>    ./wish
+        >>    ./wish batch.txt
 
 2. ***xv6 Kernel Projects***
 
@@ -80,8 +80,8 @@
     > - Because `sys_getreadcount` function is implemented in **sysproc.c file** we added only the function prototype **extern int sys_getreadcount(void)** here, similar to the other system calls
     > - To make the system call available to user programs, update **user.h** and ** and **usys.S** files, `getreadcount()` being the system call that the user can make
      > - To compile and run this program, after [installing xv6](https://github.com/remzi-arpacidusseau/ostep-projects/blob/master/INSTALL-xv6.md):
-        >>     make qemu-nox
-        >>     ./userprogram.c
+        >>    make qemu-nox
+        >>    ./userprogram.c
 
 
 
