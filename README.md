@@ -2,7 +2,7 @@
 #### Three Easy Pieces 
 
 
-This repository holds a number of projects used to develop a better understanding of how an Operating System works,
+This repository holds my notes and a number of projects used to develop a better understanding of how an Operating System works,
 based on the book and online course **Operating Systems**, *Three Easy Pieces*.
 
 Types of projects inside **[Virtualization](/Virtualization)**, **[Concurrency](/Concurrency)** and **[Persistance](/Persistance)** are: 
